@@ -5,9 +5,7 @@ mkdir -p $1 $2 $3 # Ensure dirs are present
 build_dir=$(cd $1 && pwd)
 cache_dir=$(cd $2 && pwd)
 env_dir=$(cd $3 && pwd)
-gleam_dir="$HOME/.gleam"
-echo "build dit"
-echo $build_dir
+gleam_dir="$build_dir/.gleam"
 echo $gleam_dir
 echo $HOME
 
@@ -19,9 +17,8 @@ echo $(cd $gleam_dir && ls)
 
 chmod +x "$gleam_dir/gleam"
 
-mkdir -p $HOME/.profile.d
-echo "export PATH=$gleam_dir:$PATH" >> $HOME/.profile.d/gleam_buildpack_paths.sh
+mkdir -p $build_dir/.profile.d
+echo "export PATH=$gleam_dir:$PATH" >> $build_dir/.profile.d/gleam_buildpack_paths.sh 
 $gleam_dir/gleam --version
 export PATH=$gleam_dir:$PATH
-echo "again"
 gleam --version
