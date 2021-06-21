@@ -6,6 +6,8 @@ build_dir=$(cd $1 && pwd)
 cache_dir=$(cd $2 && pwd)
 env_dir=$(cd $3 && pwd)
 gleam_dir="$HOME/.gleam"
+echo "build dit"
+echo $build_dir
 echo $gleam_dir
 echo $HOME
 
