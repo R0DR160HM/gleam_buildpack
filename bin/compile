@@ -20,3 +20,6 @@ chmod +x "$gleam_dir/gleam"
 mkdir -p $build_dir/.profile.d
 echo "export PATH=$gleam_dir:$PATH" >> $build_dir/.profile.d/gleam_buildpack_paths.sh 
 $gleam_dir/gleam --version
+export PATH=$gleam_dir:$PATH
+echo "again"
+gleam --version
