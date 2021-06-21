@@ -6,15 +6,15 @@ build_dir=$(cd $1 && pwd)
 cache_dir=$(cd $2 && pwd)
 env_dir=$(cd $3 && pwd)
 gleam_dir="$build_dir/.gleam"
-echo gleam_dir
+echo $gleam_dir
 
 mkdir -p $gleam_dir
 
-wget -c https://github.com/gleam-lang/gleam/releases/download/v0.16.0/gleam-v0.16.0-linux-amd64.tar.gz -O - | tar -xz -C $(gleam_dir) 
-echo $(cd $(gleam_dir) && pwd)
-echo $(cd $(gleam_dir) && ls)
+wget -c https://github.com/gleam-lang/gleam/releases/download/v0.16.0/gleam-v0.16.0-linux-amd64.tar.gz -O - | tar -xz -C $gleam_dir
+echo $(cd $gleam_dir && pwd)
+echo $(cd $gleam_dir && ls)
 
-chmod +x $(gleam_dir)/*
+chmod +x "$gleam_dir/*"
 
 mkdir -p $build_dir/.profile.d
-echo "export PATH=$(gleam_dir):$PATH" >> $build_dir/.profile.d/gleam_buildpack_paths.sh 
+echo "export PATH=$gleam_dir:$PATH" >> $build_dir/.profile.d/gleam_buildpack_paths.sh 
