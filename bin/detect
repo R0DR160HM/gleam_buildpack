@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Installing Gleam"
+exit 0
