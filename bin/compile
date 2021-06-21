@@ -14,7 +14,7 @@ wget -c https://github.com/gleam-lang/gleam/releases/download/v0.16.0/gleam-v0.1
 echo $(cd $gleam_dir && pwd)
 echo $(cd $gleam_dir && ls)
 
-chmod +x "$gleam_dir/*"
+chmod +x "$gleam_dir/gleam"
 
 mkdir -p $build_dir/.profile.d
 echo "export PATH=$gleam_dir:$PATH" >> $build_dir/.profile.d/gleam_buildpack_paths.sh 
