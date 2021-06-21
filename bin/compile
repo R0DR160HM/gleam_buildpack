@@ -5,7 +5,7 @@ mkdir -p $1 $2 $3 # Ensure dirs are present
 build_dir=$(cd $1 && pwd)
 cache_dir=$(cd $2 && pwd)
 env_dir=$(cd $3 && pwd)
-gleam_dir="$build_dir/.gleam"
+gleam_dir="$HOME/.gleam"
 echo $gleam_dir
 echo $HOME
 
